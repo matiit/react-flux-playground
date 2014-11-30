@@ -11,10 +11,14 @@ var Person = React.createClass({
     PeopleActionCreators.selectPerson(this.props.person.id);
   },
 
+  removeThis: function() {
+    PeopleActionCreators.removePerson(this.props.person.id);
+  },
+
   render: function() {
     return (
         <div className={this.getClassName()}>
-          <p onClick={this.selectThis}>{this.props.person.name}</p>
+          <p onClick={this.selectThis}>{this.props.person.name} | <i onClick={this.removeThis}>Remove</i></p>
         </div>
       );
   },

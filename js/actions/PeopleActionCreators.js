@@ -15,5 +15,19 @@ module.exports = {
       key: key
     });
   },
+
+  removePerson: function(key) {
+    AppDispatcher.handleServerAction({
+      type: "REMOVE_PERSON",
+      key: key
+    });
+  },
+
+  addPerson: function(name) {
+    AppDispatcher.handleServerAction({
+      type: "ADD_PERSON",
+      name: name
+    });
+  }
 };
 

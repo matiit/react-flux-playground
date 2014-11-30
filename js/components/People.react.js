@@ -8,13 +8,15 @@ var PeopleActionCreators = require('../actions/PeopleActionCreators');
 var React = require('react');
 
 var Person = require('./Person.react');
+var PersonAdder = require('./PersonAdder.react');
 
 function getStateFromStores() {
   return {
     people: PeopleStore.getAll(),
     selected: PeopleStore.getSelected()
   };
-}
+};
+
 var People = React.createClass({
 
   getInitialState: function() {
@@ -36,6 +38,7 @@ var People = React.createClass({
       <div className="people">
         <h1>List of people</h1>
         {personNodes}
+        <PersonAdder />
       </div>
     );
   },
