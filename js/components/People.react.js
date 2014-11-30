@@ -34,6 +34,10 @@ var People = React.createClass({
         );
     }.bind(this));
 
+    if (this.state.people.length === 0) {
+      personNodes = "No people to display.";
+    }
+
     return (
       <div className="people">
         <h1>List of people</h1>
